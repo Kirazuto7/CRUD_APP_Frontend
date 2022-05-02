@@ -1,5 +1,13 @@
 # client-starter-code
 
+### Group Members
+| Name       | Github              |
+| --------------- | ----------------- |
+| Jordan Sukhnandan | Kirazuto7 |
+| Oscar Andrade  | OscarAnd123 |
+| Arifa Baksh | Arifa-B |
+| Alden Lee | AldenL |
+
 This repository is the client (front-end) starter code for Final Project (CRUD Application).
 
 ### Use the following steps to set up and run the client (front-end) application on your local machine
