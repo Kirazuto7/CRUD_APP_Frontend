@@ -17,14 +17,7 @@ const StudentView = (props) => {
       </div>
       );
   }
-/*
-details of students
-1. student first and last name DONE
-2. student campus (and link to campus) DONE
-3. student email DONE
-4. student profile pic DONE
-5. student gpa DONE
-*/ 
+
   return (
     <div>
       
