@@ -64,6 +64,7 @@ class EditStudentContainer extends Component {
         lastname: '', 
         campusId: '', 
         email: '',
+        imageUrl: '',
         gpa: '',
         redirect: true
       });
