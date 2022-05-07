@@ -22,11 +22,19 @@ export const fetchCampus = (campus) => {
 };
 
 // Add a Campus
-export const AddCampus = (campus) => {
+export const addCampus = (campus) => {
   return {
     type: at.ADD_CAMPUS,
     payload: campus,
-  }
+  };
+};
+
+// Delete a Campus
+export const deleteCampus = (campusId) => {
+  return {
+    type: at.DELETE_CAMPUS,
+    payload: campusId,
+  };
 };
 
 //All Students
