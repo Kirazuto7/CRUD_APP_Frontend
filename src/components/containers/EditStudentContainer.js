@@ -21,6 +21,7 @@ class EditStudentContainer extends Component {
       firstname: '',
       lastname: '',
       campusId: '',
+      imageUrl: '',
       gpa: '',
       student: this.props.student,
       allcampus: this.props.allCampuses,
