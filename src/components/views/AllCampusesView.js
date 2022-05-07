@@ -4,13 +4,21 @@ AllCampusesView.js
 The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display all campuses.
 ================================================== */
+import { Button } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
   // If there is no campus, display a message.
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+    <div>
+        <p>There are no campuses.</p>
+        <Link to={`newcampus`}>
+          <button>Add New Campus</button>
+        </Link>
+    </div>
+    );
   }
 
   // If there is at least one campus, render All Campuses view 
@@ -30,7 +38,7 @@ const AllCampusesView = (props) => {
         </div>
       ))}
       <br/>
-      <Link to={`/`}>
+      <Link to={`/newcampus`}>
         <button>Add New Campus</button>
       </Link>
       <br/><br/>
