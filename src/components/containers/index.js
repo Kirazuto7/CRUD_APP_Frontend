@@ -5,7 +5,7 @@ This is a "barrel" file for the Container components, which combines all the exp
 and makes it easier to import into App.js.
 
 Note: A "barrel" file is a way to rollup exports from other modules into a single convenient module. 
-The "barrel" (module) file re-exports the exports of other modules.
+The "barrel" (module) file re-exports the exports of other modules..
 ================================================== */
 export { default as HomePageContainer } from "./HomePageContainer";
 export { default as AllCampusesContainer } from "./AllCampusesContainer";

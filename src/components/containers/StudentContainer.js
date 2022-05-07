@@ -23,7 +23,7 @@ class StudentContainer extends Component {
     this.props.fetchAllStudents();
   }
 
-  // Render Student view by passing student data as props to the corresponding View component
+  // Render Student view by passing student data as props to the corresponding View component.
   render() {
     return (
       <div>

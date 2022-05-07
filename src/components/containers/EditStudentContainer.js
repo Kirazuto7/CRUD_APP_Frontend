@@ -58,7 +58,7 @@ class EditStudentContainer extends Component {
       
       await this.props.editStudent(student);
 
-      // Update state, and trigger redirect to show the new student
+      // Update state, and trigger redirect to show the new student.
       this.setState({
         firstname: '', 
         lastname: '', 
