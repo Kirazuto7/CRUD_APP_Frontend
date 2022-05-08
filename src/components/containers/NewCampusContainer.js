@@ -12,7 +12,7 @@ class NewCampusContainer extends Component {
         this.state = {
             campusId: null,
             name: "",
-            imageUrl: "",
+            imageUrl: null,
             address: "",
             description: "",
             redirect: false,
@@ -52,7 +52,7 @@ class NewCampusContainer extends Component {
         this.setState({
             campusId: null,
             name: "",
-            imageUrl: "",
+            imageUrl: null,
             address: "",
             description: "",
             redirect: true,
@@ -92,4 +92,4 @@ const mapDispatch = (dispatch) => {
     });
 };
 
-export default connect(null, mapDispatch)(NewCampusContainer);
+export default connect(mapState, mapDispatch)(NewCampusContainer);
