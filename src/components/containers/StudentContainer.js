@@ -9,21 +9,29 @@ import Header from './Header';
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchStudentThunk } from "../../store/thunks";
+import { deleteStudentThunk } from "../../store/thunks";
+import { fetchAllCampusesThunk } from "../../store/thunks";
 import { StudentView } from "../views";
+import { fetchAllStudentsThunk } from '../../store/thunks';
 
 class StudentContainer extends Component {
   // Get student data from back-end database
   componentDidMount() {
     //getting student ID from url
     this.props.fetchStudent(this.props.match.params.id);
+    this.props.fetchAllCampus();
+    this.props.fetchAllStudents();
   }
 
-  // Render Student view by passing student data as props to the corresponding View component
+  // Render Student view by passing student data as props to the corresponding View component.
   render() {
     return (
       <div>
         <Header />
-        <StudentView student={this.props.student} />
+        <StudentView student={this.props.student} 
+        deleteStudent={this.props.deleteStudent}
+        allCampus={this.props.allCampus}
+        />
       </div>
     );
   }
@@ -41,6 +49,9 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
+    deleteStudent: (studentId) => dispatch(deleteStudentThunk(studentId)),
+    fetchAllCampus: () => dispatch(fetchAllCampusesThunk()),
+    fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
   };
 };
 
