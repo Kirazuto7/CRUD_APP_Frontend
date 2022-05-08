@@ -3,6 +3,7 @@ import "./App.css";
 //Router
 import { Switch, Route } from "react-router-dom";
 //Components
+import NewCampusContainer from "./components/containers/NewCampusContainer";
 import {
   HomePageContainer,
   CampusContainer,

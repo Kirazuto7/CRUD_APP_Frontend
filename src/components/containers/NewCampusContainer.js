@@ -68,10 +68,10 @@ class NewCampusContainer extends Component {
         return(
             <div>
                 <Header/>
-                <NewCampusView>
+                <NewCampusView
                     handleChange = {this.handleChange}
                     handleSubmit = {this.handleSubmit}
-                </NewCampusView>
+                />
             </div>
         );    
     }
@@ -82,14 +82,14 @@ const mapState = (state) => {
     return{
         allCampuses: state.allCampuses,
     };
-};
+}
 
 // Dispatch actions to redux store
 const mapDispatch = (dispatch) => {
     return({
         addCampus: (campus) => dispatch(addCampusThunk(campus)),
         fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-    });
-};
+    })
+}
 
 export default connect(mapState, mapDispatch)(NewCampusContainer);
