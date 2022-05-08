@@ -7,6 +7,10 @@ import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk, fetchAllCampusesThunk } from '../../store/thunks';
 
 class NewCampusContainer extends Component {
+    componentDidMount(){
+        this.props.fetchAllCampuses();
+    }
+
     constructor(props){
         super(props);
         this.state = {
@@ -18,10 +22,6 @@ class NewCampusContainer extends Component {
             redirect: false,
             redirectId: null
         };
-    }
-
-    componentDidMount(){
-        this.props.fetchAllCampuses()
     }
 
     componentWillUnmount(){
