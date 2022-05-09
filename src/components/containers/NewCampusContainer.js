@@ -7,21 +7,21 @@ import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk, fetchAllCampusesThunk } from '../../store/thunks';
 
 class NewCampusContainer extends Component {
+    componentDidMount(){
+        this.props.fetchAllCampuses();
+    }
+
     constructor(props){
         super(props);
         this.state = {
             campusId: null,
             name: "",
-            imageUrl: "",
+            imageUrl: null,
             address: "",
             description: "",
             redirect: false,
             redirectId: null
         };
-    }
-
-    componentDidMount(){
-        this.props.fetchAllCampuses()
     }
 
     componentWillUnmount(){
@@ -52,7 +52,7 @@ class NewCampusContainer extends Component {
         this.setState({
             campusId: null,
             name: "",
-            imageUrl: "",
+            imageUrl: null,
             address: "",
             description: "",
             redirect: true,
@@ -68,10 +68,10 @@ class NewCampusContainer extends Component {
         return(
             <div>
                 <Header/>
-                <NewCampusView>
+                <NewCampusView
                     handleChange = {this.handleChange}
                     handleSubmit = {this.handleSubmit}
-                </NewCampusView>
+                />
             </div>
         );    
     }
@@ -82,14 +82,14 @@ const mapState = (state) => {
     return{
         allCampuses: state.allCampuses,
     };
-};
+}
 
 // Dispatch actions to redux store
 const mapDispatch = (dispatch) => {
     return({
         addCampus: (campus) => dispatch(addCampusThunk(campus)),
         fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-    });
-};
+    })
+}
 
-export default connect(null, mapDispatch)(NewCampusContainer);
+export default connect(mapState, mapDispatch)(NewCampusContainer);
