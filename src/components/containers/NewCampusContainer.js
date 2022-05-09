@@ -21,7 +21,7 @@ class NewCampusContainer extends Component {
     }
 
     componentDidMount(){
-        this.props.fetchAllCampusesThunk()
+        this.props.fetchAllCampuses()
     }
 
     componentWillUnmount(){
