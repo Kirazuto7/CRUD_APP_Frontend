@@ -32,14 +32,27 @@ export const fetchCampusThunk = (id) => async (dispatch) => {  // The THUNK
   }
 };
 
+// Edit Campus
+// THUNK CREATOR:
+export const editCampusThunk = campus => async dispatch => {  // The THUNK
+  try {
+    // API "put" call to update campus (based on "id" and "campus" object's data) from database
+    let updatedCampus = await axios.put(`/api/campuses/${campus.id}`, campus); 
+    // Update successful so change state with dispatch
+    dispatch(ac.editCampus(updatedCampus));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
 // Add Campus
 // THUNK CREATOR:
 export const addCampusThunk = (campus) => async (dispatch) => {
   try {
     let res = await axios.post(`/api/campuses`, campus);
-    dispatch(ac.AddCampus(res.data));
+    dispatch(ac.addCampus(res.data));
     return res.data;
-  } catch (error) {
+  } catch (err) {
     console.error(err);
   }
 };
@@ -48,7 +61,7 @@ export const addCampusThunk = (campus) => async (dispatch) => {
 // THUNK CREATOR:
 export const deleteCampusThunk = campusId => async (dispatch) => {
   try {
-    let res = await axios.delete(`/api/campuses/${id}`);
+    let res = await axios.delete(`/api/campuses/${campusId}`);
   } catch (err) {
     
   }

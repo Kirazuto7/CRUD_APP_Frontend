@@ -21,6 +21,14 @@ export const fetchCampus = (campus) => {
   };
 };
 
+//Edit Campus
+export const editCampus = (campus) => {
+  return {
+    type: at.EDIT_CAMPUS,
+    payload: campus,
+  };
+};
+
 // Add a Campus
 export const addCampus = (campus) => {
   return {
