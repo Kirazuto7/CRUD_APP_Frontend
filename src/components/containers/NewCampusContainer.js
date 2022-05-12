@@ -5,8 +5,10 @@ import { Redirect } from 'react-router-dom';
 
 import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk, fetchAllCampusesThunk } from '../../store/thunks';
+import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 
 class NewCampusContainer extends Component {
+
     componentDidMount(){
         this.props.fetchAllCampuses();
     }
@@ -16,11 +18,12 @@ class NewCampusContainer extends Component {
         this.state = {
             campusId: null,
             name: "",
-            imageUrl: null,
+            imageUrl: "https://www.fdu.edu/wp-content/uploads/2019/08/Florham-Campus-1280x0-c-default.jpg",
             address: "",
             description: "",
             redirect: false,
-            redirectId: null
+            redirectId: null,
+            campusExists: false
         };
     }
 
@@ -36,7 +39,11 @@ class NewCampusContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault(); // Prevent browser reload/refresh after submit
-
+        this.setState({
+            campusExists: false,
+            redirect: false
+        });
+        let exists = false
         let campus = {
             campusId: this.props.allCampuses.length + 1, // auto increment the id by adding 1 to the current number of campuses for the new campus
             name: this.state.name,
@@ -44,36 +51,62 @@ class NewCampusContainer extends Component {
             address: this.state.address,
             description: this.state.description
         };
-
-        // Add new campus to backend
-        let newCampus = await this.props.addCampus(campus);
-
-        // Update the state and show the new campus in the redirect
-        this.setState({
-            campusId: null,
-            name: "",
-            imageUrl: null,
-            address: "",
-            description: "",
-            redirect: true,
-            redirectId: newCampus.id
+        
+        this.props.allCampuses.forEach(existingCampus => {
+            if(existingCampus.name == campus.name)
+            {
+                exists = true
+                this.setState({
+                    campusExists: true,
+                    redirect: false        
+                });
+            }
         });
+
+        if(exists == false)
+        {
+                // Add new campus to backend
+            let newCampus = await this.props.addCampus(campus);
+        
+            // Update the state and show the new campus in the redirect
+            this.setState({
+                campusId: null,
+                name: "",
+                imageUrl: null,
+                address: "",
+                description: "",
+                redirect: true,
+                redirectId: newCampus.id,
+                campusExists: false
+            });
+        }
     }
 
     render(){
-        if(this.state.redirect){
-            return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+        if(this.state.campusExists){
+            return(
+                <div className='Campus Exists'>
+                    <Header/>
+                    The campus already exists.
+                </div>
+            ); 
         }
-
-        return(
-            <div>
-                <Header/>
-                <NewCampusView
-                    handleChange = {this.handleChange}
-                    handleSubmit = {this.handleSubmit}
-                />
-            </div>
-        );    
+        else{
+            if(this.state.redirect){
+                return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+            }
+    
+            return(
+                <div>
+                    <Header/>
+                    <NewCampusView
+                        handleChange = {this.handleChange}
+                        handleSubmit = {this.handleSubmit}
+                    />
+                </div>
+            ); 
+        }
+           
     }
 }
 

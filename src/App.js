@@ -3,7 +3,7 @@ import "./App.css";
 //Router
 import { Switch, Route } from "react-router-dom";
 //Components
-import NewCampusContainer from "./components/containers/NewCampusContainer";
+
 import {
   HomePageContainer,
   CampusContainer,
@@ -12,7 +12,8 @@ import {
   AllStudentsContainer,
   NewStudentContainer,
   EditStudentContainer,
-  EditCampusContainer
+  EditCampusContainer,
+  NewCampusContainer
 } from './components/containers';
 
 // if you create separate components for adding/editing 
