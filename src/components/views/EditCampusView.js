@@ -1,6 +1,7 @@
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
 
 // Create styling for the input form.
 const useStyles = makeStyles( () => ({
@@ -32,7 +33,7 @@ const EditCampusView = (props) => {
   const {handleChange, handleSubmit, campus } = props;
   const classes = useStyles();
 
-  // Render a New Student view with an input form
+  // Render Edited Campus view with an input form
   return (
     <div>
       <h1>{campus.name}</h1>
@@ -46,28 +47,37 @@ const EditCampusView = (props) => {
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Name: </label>
-            <input type="text" name="name" onChange ={(e) => handleChange(e)} required/>
+            <input defaultValue={campus.name} type="text" name="name" onChange ={(e) => handleChange(e)} required/>
             
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Address: </label>
-            <input type="text" name="address" onChange={(e) => handleChange(e)} required/>
+            <input defaultValue={campus.address} type="text" name="address" onChange={(e) => handleChange(e)} required/>
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Image Url: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} required/>
+            <input defaultValue={campus.imageUrl} type="text" name="imageUrl" onChange={(e) => handleChange(e)} required/>
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-            <input type="text" name="description" onChange={(e) => handleChange(e)} required/>
+            <input defaultValue={campus.description} type="text" name="description" onChange={(e) => handleChange(e)} required/>
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Student ID: </label>
-            <input type="text" name="studentId" onChange={(e) => handleChange(e)} required/>
+            <Link to={`/newstudent`}>
+              <button>Add New Student</button>
+            </Link>
+
+            {/* <p> Need to add a add an exisiting student?</p>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Enter Student ID: </label>
+            <input type="text" name="studentId" onChange={(e) => handleChange(e)}/> */}
+            <Link to={`/students`}>
+              <button>Add Existing Student</button>
+            </Link>
+
             <br/>
             <br/>
 
