@@ -49,11 +49,14 @@ class EditCampusContainer extends Component {
         })
       }
       else{
+        // let addedStudent = this.props.fetchStudent(this.state.studentId);
+        // this.state.studentsArray.push(addedStudent);
         const campus = {
           name: this.state.name,
           address: this.state.address,
           imageUrl: this.state.imageUrl,
           description: this.state.description,
+          // studentsArray : this.state.studentsArray,
           studentId: this.state.studentId, //need to be able to take in studentId and push to students array in campus object
           id: this.state.campusId
         };
