@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles( () => ({
   formContainer:{  
     width: '500px',
-    backgroundColor: '#f0f0f5',
+    backgroundColor: '#B19CD9',
     borderRadius: '5px',
     margin: 'auto',
   },
@@ -21,7 +21,7 @@ const useStyles = makeStyles( () => ({
     shadows: ['none'],
   },
   formTitle:{
-    backgroundColor:'#c5c8d6',
+    backgroundColor:'#63229A',
     marginBottom: '15px',
     textAlign: 'center',
     borderRadius: '5px 5px 0px 0px',
@@ -36,12 +36,12 @@ const EditCampusView = (props) => {
   // Render Edited Campus view with an input form
   return (
     <div>
-      <h1>{campus.name}</h1>
+      <h1 style={{color: '#63229A'}}>{campus.name}</h1>
 
       <div className={classes.root}>
-        <div className={classes.formContainer}>
+        <div className={classes.formContainer} id="formBox">
           <div className={classes.formTitle}>
-            <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+            <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '25px', color: 'white'}}>
               Edit Campus
             </Typography>
           </div>
@@ -68,14 +68,14 @@ const EditCampusView = (props) => {
             <br/>
 
             <Link to={`/newstudent`}>
-              <button>Add New Student</button>
+              <button style={{backgroundColor:'#63229A', color: 'white'}}>Add New Student</button>
             </Link>
 
             {/* <p> Need to add a add an exisiting student?</p>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Enter Student ID: </label>
             <input type="text" name="studentId" onChange={(e) => handleChange(e)}/> */}
             <Link to={`/students`}>
-              <button>Add Existing Student</button>
+              <button style={{backgroundColor:'#63229A', color: 'white', marginLeft: '5px'}}>Add Existing Student</button>
             </Link>
 
             <br/>

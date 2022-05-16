@@ -84,6 +84,7 @@ class EditCampusContainer extends Component {
       return (
         <div>
           <Header />
+          <br/><br/><br/>
           <EditCampusView campus={this.props.campus}
           handleChange = {this.handleChange} 
           handleSubmit={this.handleSubmit}

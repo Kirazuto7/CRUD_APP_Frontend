@@ -24,10 +24,10 @@ const useStyles = makeStyles(theme => ({
     fontType: 'bold',
     fontFamily: 'sans-serif', 
     fontSize: '35px', 
-    color: 'darkblue'
+    color: 'white'
   },
   appBar:{
-    backgroundColor: '#fcb6bb',
+    backgroundColor: '#63229a',
     shadows: ['none'],
   },
   greeting:{
@@ -48,7 +48,7 @@ const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" elevation={0} className={classes.appBar}>
+      <AppBar position="fixed" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} color="inherit" >
             Campus Management System
