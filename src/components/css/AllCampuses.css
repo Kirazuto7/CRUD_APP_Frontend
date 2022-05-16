@@ -1,0 +1,64 @@
+.pageTitle{
+    font-style: bolder;
+    color: rgb(99, 34, 154)
+}
+
+.campusContainer{
+    display:grid;
+    max-width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    align-items:stretch;
+    column-gap: 5%;
+}
+
+@media (max-width: 500px){
+    .campusContainer{
+        grid-template-columns: 1fr;
+        row-gap: 2%;
+    }
+
+    .informationContainer{
+        margin-left: 10%;
+    }
+}
+
+.imageContainer{
+    margin-left: 10%;
+}
+
+.informationContainer{
+    border: 4px solid rgb(99,34,154);
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    height: 100%;
+}
+
+
+.campusImage{
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgb(99,34,154);
+    border-radius: 3%;
+}
+
+.label{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(99,34,154);
+    color: rgb(255,255,255);
+}
+
+.text{
+    font-size: 16px;
+}
+
+.deleteButton{
+    position: center;
+    margin-top: 3%;
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 5px;
+    border: 1px solid black;
+}

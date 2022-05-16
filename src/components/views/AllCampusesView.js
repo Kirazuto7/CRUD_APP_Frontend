@@ -7,6 +7,7 @@ It constructs a React component to display all campuses.
 import { Button } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "../css/AllCampuses.css";
 
 const AllCampusesView = (props) => {
   const {allCampuses ,deleteCampus} = props;
@@ -26,20 +27,26 @@ const AllCampusesView = (props) => {
   // If there is at least one campus, render All Campuses view 
   return (
     <div>
-      <h1>All Campuses</h1>
+      <h1 className="pageTitle">All Campuses</h1>
 
       {allCampuses.map((campus) => (
-        <div key={campus.id}>
-          <Link to={`/campus/${campus.id}`}>
-            <h2>{campus.name}</h2>
-          </Link>
-          <h4>Campus Id: {campus.id}</h4>
-          <img className="Campus Image" src={campus.imageUrl} alt="campus_image" width="500" height="300"/>
-          <p> <span className="Address Label">Address: </span> {campus.address}</p>
-          <p> <span className="Description Label">Description: </span>{campus.description} </p>
-          <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
-          <hr/>
-        </div>
+          <div key={campus.id}>
+            <Link to={`/campus/${campus.id}`}>
+              <h2>{campus.name}</h2>
+            </Link>
+            <div className="campusContainer">
+              <div className="imageContainer">
+                <img className="campusImage" src={campus.imageUrl} alt="campus_image" width="500" height="500"/>
+              </div>
+              <div className="informationContainer">
+                <h3>Campus Id: {campus.id}</h3>
+                <p className="text"> <p className="label">Address: </p> {campus.address} </p>
+                <p className="text"> <p className="label">Description: </p>{campus.description} </p>
+              </div>
+            </div>
+            <button className="deleteButton" onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
+            <hr/>
+          </div>
       ))}
       <br/>
       <Link to={`/newcampus`}>

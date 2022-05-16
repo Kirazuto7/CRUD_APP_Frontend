@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk, fetchAllCampusesThunk } from '../../store/thunks';
-import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
+
 
 class NewCampusContainer extends Component {
 
@@ -18,7 +18,7 @@ class NewCampusContainer extends Component {
         this.state = {
             campusId: null,
             name: "",
-            imageUrl: "https://www.fdu.edu/wp-content/uploads/2019/08/Florham-Campus-1280x0-c-default.jpg",
+            imageUrl: "https://media.istockphoto.com/photos/university-in-autumn-picture-id173598452?k=20&m=173598452&s=170667a&w=0&h=HxRuZzeSaZKP0f0a634LL2KUDbom5hVSBI30Im9Ei1I=",
             address: "",
             description: "",
             redirect: false,

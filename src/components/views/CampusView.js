@@ -5,6 +5,7 @@ The Views component is responsible for rendering web page with data provided by 
 It constructs a React component to display a single campus and its students (if any).
 ================================================== */
 import { Link } from "react-router-dom";
+import "../css/Campus.css";
 
 // Take in props data to construct the component
 const CampusView = (props) => {
@@ -13,9 +14,11 @@ const CampusView = (props) => {
   return (
     <div>
       <h1>{campus.name}</h1>
+      <div className="campusContainer">
       <img src = {campus.imageUrl}  alt="campus_image" width="500" height="300"></img>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+      </div>
       {campus.students.length === 0 ?
         <p> No enrolled students </p>
         :
