@@ -1,0 +1,63 @@
+.campus .campusName{
+    color: rgb(99, 34, 154);
+    margin-left: 10%;
+}
+
+.campus .editButton{
+    float: right;
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 12px;
+    box-shadow: 0 0 1.5px 1.5px rgb(177, 156, 217);
+    border: none;
+    border-radius: 30%;
+    margin-right: 5%;
+    font-size: large;
+}
+
+.campus .campusImage{
+    width: 80vw;
+    height: 100vh;
+    box-shadow: 0 0 2px 2px rgb(177, 156, 217);
+}
+
+.campus .descriptionContainer{
+    border: 3px solid rgb(99, 34, 154);
+    width: 50vw;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.campus .label{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(99,34,154);
+}
+
+.campus .text{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.campus .numberStudents{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.campus .numberStudentsNumber{
+    border: solid rgb(99, 34, 154);
+    border-width: 5px 16px;
+    background-color: rgb(99, 34, 154);
+    color: white;
+    
+}
+
+.campus .studentLink{
+    margin: auto;
+    width: 20%;
+    background-color: white;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0.75%;
+    border: solid black;
+}

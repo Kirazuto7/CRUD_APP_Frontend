@@ -17,6 +17,27 @@ class CampusContainer extends Component {
   componentDidMount() {
     // Get campus ID from URL (API link)
     this.props.fetchCampus(this.props.match.params.id);
+    window.scrollTo(0,0);
+  }
+
+  componentDidUpdate(){
+    let studentArray = document.querySelectorAll(["div.studentLink"])
+    var counter = 0; // Alternate between students
+    for(let i = 0; i < studentArray.length; i++){
+      if(counter % 2 == 0)
+      {
+        studentArray[i].style.backgroundColor = '#63229A';
+        studentArray[i].style.color = 'white';
+      }
+      studentArray[i].style.borderTopWidth = '0px';
+      studentArray[i].style.borderBottomWidth = '0px';
+      counter++;
+    }
+
+    if (studentArray.length){
+      studentArray[0].style.borderTopWidth = '3px';
+      studentArray[studentArray.length-1].style.borderBottomWidth = '3px';
+    }
   }
 
   // Render a Campus view by passing campus data as props to the corresponding View component
@@ -24,6 +45,7 @@ class CampusContainer extends Component {
     return (
       <div>
         <Header />
+        <br/><br/><br/>
         <CampusView campus={this.props.campus} />
       </div>
     );

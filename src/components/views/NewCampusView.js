@@ -5,21 +5,21 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles( () => ({
     formContainer:{
         width: '500px',
-        backgroundColor: '#f0f0f5',
+        backgroundColor: '#B19CD9',
         borderRadius: '5px',
-        margin: 'auto',
+        margin: 'auto'
     },
     title:{
         flexGrow: 1,
         textAlign: 'left',
-        textDecoration: 'none'
+        textDecoration: 'none',
     },
     customizeAppBar:{
         backgroundColor: '#11135e',
         shadows: ['none'],
     },
     formTitle:{
-        backgroundColor:'c5c8d6',
+        backgroundColor:'#63229A',
         marginBottom: '15px',
         textAlign: 'center',
         borderRadius: '5px 5px 0px 0px',
@@ -33,12 +33,12 @@ const NewCampusView = (props) => {
 
     return(
         <div>
-            <h1>New Campus</h1>
+            <h1 style={{color: '#63229A'}}>New Campus</h1>
             <div className = {classes.root}>
-                <div className = {classes.formContainer}>
+                <div className = {classes.formContainer} id ="formBox">
 
                     <div className = {classes.formTitle}>
-                        <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e' }}>
+                        <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '25px', color: 'white' }}>
                             Add a Campus
                         </Typography>
                     </div>
@@ -53,7 +53,7 @@ const NewCampusView = (props) => {
                         <br />
                         <br />
 
-                        <label style={{color: '11153e', fontWeight: 'bold'}}>Description: </label>
+                        <label style={{color: '#11153e', fontWeight: 'bold'}}>Description: </label>
                         <input type="text" name="description" onChange={(e) => handleChange(e)} />
                         <br />
                         <br />

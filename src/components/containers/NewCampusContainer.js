@@ -87,7 +87,8 @@ class NewCampusContainer extends Component {
             return(
                 <div className='Campus Exists'>
                     <Header/>
-                    The campus already exists.
+                    <br/><br/><br/>
+                    <h1>This campus already exists.</h1>
                 </div>
             ); 
         }
@@ -99,6 +100,7 @@ class NewCampusContainer extends Component {
             return(
                 <div>
                     <Header/>
+                    <br/><br/><br/>
                     <NewCampusView
                         handleChange = {this.handleChange}
                         handleSubmit = {this.handleSubmit}

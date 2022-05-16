@@ -18,6 +18,7 @@ class AllCampusesContainer extends Component {
   componentDidMount() {
     console.log(this.props);
     this.props.fetchAllCampuses();
+    window.scrollTo(0,0);
   }
 
   // Render All Campuses view by passing all campuses data as props to the corresponding View component
@@ -25,6 +26,7 @@ class AllCampusesContainer extends Component {
     return (
       <div>
         <Header />
+        <br/><br/><br/>
         <AllCampusesView
           allCampuses={this.props.allCampuses}
           deleteCampus={this.props.deleteCampus}
