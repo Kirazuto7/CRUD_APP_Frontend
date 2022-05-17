@@ -28,7 +28,10 @@ const StudentView = (props) => {
       </div>
       <br/><br/><br/>
       <h1 style={{color: "#63229A", marginTop: "2%"}}>{student.firstname + " " + student.lastname}</h1>
-      <img className="studentImage" src={student.imageURL} alt="profilePicture" width="500" height="300"></img>
+
+      <span className="studentImageWrap">
+        <img className="studentImage" src={student.imageURL} alt="profilePicture" width="500" height="300"></img>
+      </span>
       <br/><br/>
       {student.campus !== null ? 
       

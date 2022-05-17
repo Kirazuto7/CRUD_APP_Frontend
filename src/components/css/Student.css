@@ -47,7 +47,13 @@
     font-weight: 600;
 }
 
+.student .studentImageWrap{
+    filter: drop-shadow(-1px 6px 6px rgba(177,156,217,0.5));
+}
+
 .student .studentImage{
-    width: 10%;
-    height: 10%;
+    width: 15%;
+    height: 100%;
+    clip-path: circle();
+    box-shadow: 0 0 3px 3px rgb(177, 156, 217);
 } 
