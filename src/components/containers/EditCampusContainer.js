@@ -19,16 +19,15 @@ class EditCampusContainer extends Component {
   
     constructor(props){
       super(props);
+      let campus = this.props.campus
       this.state = {
-        name: "",
-        address: "",
-        imageUrl: "",
-        description: "",
-        studentId: "", //used to verify if a student exists
-        studentsArray: [],
-        campus: this.props.campus,
-        allstudents: this.props.allStudents,
-        campusId: this.props.match.params.id //id of campus we are editing
+        campus: campus,
+        name: campus.name,
+        address: campus.address,
+        imageUrl: campus.imageUrl,
+        description: campus.description,
+        campusId: campus.id, //id of campus we are editing
+        redirect: false
     };
     }
   
@@ -41,28 +40,16 @@ class EditCampusContainer extends Component {
     // Take action after user click the submit button
     handleSubmit = async event => {
       event.preventDefault();  // Prevent browser reload/refresh after submit.
-      
-      if(!(this.state.allstudents.map(({id}) => id)).includes(parseInt(this.state.studentId))){
-        alert("StudentID is not valid, please enter a valid studentID.")
-        this.setState({
-          redirect: false
-        })
-      }
-      else{
+    
         // let addedStudent = this.props.fetchStudent(this.state.studentId);
         // this.state.studentsArray.push(addedStudent);
-        const campus = {
-          name: this.state.name,
-          address: this.state.address,
-          imageUrl: this.state.imageUrl,
-          description: this.state.description,
-          // studentsArray : this.state.studentsArray,
-          studentId: this.state.studentId, //need to be able to take in studentId and push to students array in campus object
-          id: this.state.campusId
-        };
+        let campus = this.state.campus
+        campus.name = this.state.name
+        campus.address = this.state.address
+        campus.imageUrl = this.state.imageUrl
+        campus.description = this.state.description
         
         await this.props.editCampus(campus);
-        this.props.campus.students.push(this.state.studentId);
   
         // Update state, and trigger redirect to show the edited campus.
         this.setState({
@@ -70,10 +57,9 @@ class EditCampusContainer extends Component {
           address: '',
           imageUrl: '',
           description: '',
-          studentId: this.state.studentId,
           redirect: true
         });
-      }
+      
     }
   
     // Render Campus view by passing campus data as props to the corresponding View component
