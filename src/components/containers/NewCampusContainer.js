@@ -100,7 +100,6 @@ class NewCampusContainer extends Component {
             return(
                 <div>
                     <Header/>
-                    <br/><br/><br/>
                     <NewCampusView
                         handleChange = {this.handleChange}
                         handleSubmit = {this.handleSubmit}

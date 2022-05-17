@@ -26,7 +26,6 @@ class AllCampusesContainer extends Component {
     return (
       <div>
         <Header />
-        <br/><br/><br/>
         <AllCampusesView
           allCampuses={this.props.allCampuses}
           deleteCampus={this.props.deleteCampus}

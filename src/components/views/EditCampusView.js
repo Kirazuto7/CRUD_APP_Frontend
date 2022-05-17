@@ -35,7 +35,7 @@ const EditCampusView = (props) => {
 
   // Render Edited Campus view with an input form
   return (
-    <div>
+    <div style={{position: 'relative', top: '58px', width: '100vw'}}>
       <h1 style={{color: '#63229A'}}>{campus.name}</h1>
 
       <div className={classes.root}>

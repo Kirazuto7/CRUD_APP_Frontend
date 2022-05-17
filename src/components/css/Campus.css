@@ -1,3 +1,9 @@
+.campus{
+    position: relative;
+    top:58px;
+    width: 100vw;
+}
+
 .campus .campusName{
     color: rgb(99, 34, 154);
     margin-left: 10%;

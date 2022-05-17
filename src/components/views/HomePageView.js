@@ -7,8 +7,12 @@ It constructs a React component to display the home page.
 const HomePageView = () => {
   // Render Home page view
   return (
-    <div >
-      <h1>Home Page</h1>
+    <div className="homeContainer" style={{position: 'relative', top: '58px', width: '100vw'}}>
+      
+      <img className="homeLogo" src="https://www.scramsystems.com/blog/wp-content/uploads/cartoon-college-campus.jpg"></img>
+      <div id="welcome">Welcome</div>
+      <div id="to">To</div>
+      <div id="websiteTitle">Campus Management System</div>
     </div>
   );    
 }
