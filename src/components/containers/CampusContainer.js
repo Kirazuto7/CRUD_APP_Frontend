@@ -28,9 +28,12 @@ class CampusContainer extends Component {
       {
         studentArray[i].style.backgroundColor = '#63229A';
         studentArray[i].style.color = 'white';
+        studentArray[i].onmouseenter = function() {imageHover(studentArray[i])};
+        studentArray[i].onmouseleave = function() {imageHoverLeave(studentArray[i])};
       }
       studentArray[i].style.borderTopWidth = '0px';
       studentArray[i].style.borderBottomWidth = '0px';
+      
       counter++;
     }
 
@@ -39,7 +42,7 @@ class CampusContainer extends Component {
       studentArray[studentArray.length-1].style.borderBottomWidth = '3px';
     }
   }
-
+  
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     return (
@@ -48,6 +51,19 @@ class CampusContainer extends Component {
         <CampusView campus={this.props.campus} />
       </div>
     );
+  }
+}
+
+function imageHover(x) {
+  if(x)
+  {
+    x.style.color = '#B19CD9';
+  }
+}
+
+function imageHoverLeave(x){
+  if(x){
+    x.style.color = 'white';
   }
 }
 
