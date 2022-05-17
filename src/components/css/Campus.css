@@ -67,3 +67,11 @@
     padding: 0.75%;
     border: solid black;
 }
+
+.campus button:hover{
+    color: rgb(177, 156, 217)
+}
+
+.campus .studentLink:hover{
+    color: rgb(177, 156, 217)
+}

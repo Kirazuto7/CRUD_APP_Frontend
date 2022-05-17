@@ -87,3 +87,8 @@
     font-size: large;
     margin-right: 5%;
 }
+
+.allCampuses button:hover{
+    color: rgb(177, 156, 217)
+}
+

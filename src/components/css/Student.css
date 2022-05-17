@@ -55,5 +55,12 @@
     width: 15%;
     height: 100%;
     clip-path: circle();
-    box-shadow: 0 0 3px 3px rgb(177, 156, 217);
 } 
+
+.student button:hover{
+    color: rgb(177, 156, 217)
+}
+
+.student .campusLink:hover{
+    color: rgb(177, 156, 217)
+}
