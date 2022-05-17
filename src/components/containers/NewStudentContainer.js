@@ -28,7 +28,7 @@ class NewStudentContainer extends Component {
       lastname: "", 
       email: "", //AL
       gpa: 0.0, //AL
-      imageURL: null, //AL
+      imageURL: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
       campusId: null, 
       allCampus: this.props.allCampuses,
       redirect: false, 

@@ -21,6 +21,7 @@ class AllStudentsContainer extends Component {
   // Get all students data from back-end database
   componentDidMount() {
     this.props.fetchAllStudents();
+    window.scrollTo(0,0);
   }
 
   // Render All Students view by passing all students data as props to the corresponding View component

@@ -32,7 +32,7 @@ const NewCampusView = (props) => {
     const classes = useStyles();
 
     return(
-        <div>
+        <div style={{position: 'relative', top: '58px', width: '100vw'}}>
             <h1 style={{color: '#63229A'}}>New Campus</h1>
             <div className = {classes.root}>
                 <div className = {classes.formContainer} id ="formBox">

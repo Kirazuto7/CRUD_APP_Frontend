@@ -21,6 +21,7 @@ class StudentContainer extends Component {
     this.props.fetchStudent(this.props.match.params.id);
     this.props.fetchAllCampus();
     this.props.fetchAllStudents();
+    window.scrollTo(0,0);
   }
 
   // Render Student view by passing student data as props to the corresponding View component.

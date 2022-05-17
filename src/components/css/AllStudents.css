@@ -1,0 +1,26 @@
+.allStudents{
+    position: relative;
+    top:58px;
+    width: 100vw;
+}
+
+.allStudents .deleteButton{
+    position: center;
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 5px;
+    box-shadow: 0 0 1px 1px rgb(177, 156, 217);
+    border: none;
+}
+
+.allStudents .addButton{
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 8px;
+    box-shadow: 0 0 1.5px 1.5px rgb(177, 156, 217);
+    border: none;
+    border-radius: 0%;
+    float: right;
+    font-size: large;
+    margin-right: 5%;
+}

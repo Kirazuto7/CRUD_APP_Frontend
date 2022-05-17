@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 // Define styling for the header
 const useStyles = makeStyles(theme => ({
@@ -29,6 +30,7 @@ const useStyles = makeStyles(theme => ({
   appBar:{
     backgroundColor: '#63229a',
     shadows: ['none'],
+    top: '0',
   },
   greeting:{
     display: 'flex',
@@ -53,15 +55,15 @@ const Header = () => {
           <Typography variant="h6" className={classes.title} color="inherit" >
             Campus Management System
           </Typography>
-
+      
           <Link className={classes.links} to={'/'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" color="primary" style={{marginRight: '16px'}}>
               Home
             </Button>
           </Link>
 
           <Link className={classes.links} to={'/campuses'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" color="primary" style={{marginRight: '16px'}}>
               All Campuses
             </Button>
           </Link>
