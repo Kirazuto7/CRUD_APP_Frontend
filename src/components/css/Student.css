@@ -1,0 +1,47 @@
+.student{
+    position: relative;
+    top:58px;
+    width: 100vw;
+}
+
+.student .campusLink{
+    background-color: rgb(99, 34, 154);
+    color: white;
+    padding: 2px 8px;
+    box-shadow: 0 0 1.5px 1.5px rgb(177, 156, 217);
+    font-size: 18px;
+}
+
+.student .deleteButton{
+    position: center;
+    margin-top: 1%;
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 5px;
+    box-shadow: 0 0 1px 1px rgb(177, 156, 217);
+    border: none;
+    margin-right: 16px;
+}
+
+.student .editButton{
+    float: right;
+    background-color: rgb(99, 34, 154);
+    color: rgb(255,255,255);
+    padding: 12px;
+    box-shadow: 0 0 1.5px 1.5px rgb(177, 156, 217);
+    border: none;
+    border-radius: 30%;
+    margin-right: 5%;
+    font-size: large;
+}
+
+.student .label{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(99,34,154);
+}
+
+.student .text{
+    font-size: 17px;
+    font-weight: 600;
+}
