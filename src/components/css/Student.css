@@ -32,6 +32,7 @@
     border: none;
     border-radius: 30%;
     margin-right: 5%;
+    margin-top: 2%;
     font-size: large;
 }
 
@@ -45,3 +46,8 @@
     font-size: 17px;
     font-weight: 600;
 }
+
+.student .studentImage{
+    width: 10%;
+    height: 10%;
+} 
