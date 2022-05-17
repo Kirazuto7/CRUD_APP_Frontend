@@ -46,33 +46,33 @@ const EditStudentView = (props) => {
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input defaultValue={student.firstname} type="text" name="firstname" onChange ={(e) => handleChange(e)} required/>
+            <input placeholder={student.firstname} type="text" name="firstname" onChange ={(e) => handleChange(e)} />
             
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input defaultValue={student.lastname} type="text" name="lastname" onChange={(e) => handleChange(e)} required/>
+            <input placeholder={student.lastname} type="text" name="lastname" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input defaultValue={student.campusId} type="number" name="campusId" onChange={(e) => handleChange(e)} required/>
+            <input placeholder={student.campusId} type="number" min={1.0} name="campusId" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Image Url: </label>
-            <input defaultValue={student.imageURL} type="text" name="imageURL" onChange={(e) => handleChange(e)} />
+            <input placeholder={student.imageURL} type="text" name="imageURL" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-            <input defaultValue={student.email} type="email" name="email" onChange={(e) => handleChange(e)} required/>
+            <input placeholder={student.email} type="email" name="email" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-            <input defaultValue={student.gpa} type="number" step="any" min={0.0} max={4.0} name="gpa" onChange={(e) => handleChange(e)} required/>
+            <input placeholder={student.gpa} type="number" step="0.01" min={0.0} max={4.0} name="gpa" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
