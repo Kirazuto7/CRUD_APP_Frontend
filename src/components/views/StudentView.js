@@ -21,16 +21,14 @@ const StudentView = (props) => {
 
   return (
     <div className="student">
-      
-      <h1 style={{color: "#63229A", marginLeft: "10%"}}>{student.firstname + " " + student.lastname}
-        <span>
+      <div>
           <Link to={`/editstudent/${student.id}`}>
             <button className="editButton">Edit</button>
           </Link>
-        </span>
-      </h1>
-
-      <img className="studentImage" src={student.imageUrl} alt="profilePicture" width="500" height="300"></img>
+      </div>
+      <br/><br/><br/>
+      <h1 style={{color: "#63229A", marginTop: "2%"}}>{student.firstname + " " + student.lastname}</h1>
+      <img className="studentImage" src={student.imageURL} alt="profilePicture" width="500" height="300"></img>
       <br/><br/>
       {student.campus !== null ? 
       

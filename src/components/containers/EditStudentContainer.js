@@ -17,15 +17,19 @@ class EditStudentContainer extends Component {
 
   constructor(props){
     super(props);
+    
+    let student = this.props.student
+
     this.state = {
-      firstname: '',
-      lastname: '',
-      campusId: '',
-      imageUrl: '',
-      gpa: '',
-      student: this.props.student,
-      allcampus: this.props.allCampuses,
-      studentId: this.props.match.params.id 
+      student: student,
+      firstname: student.firstname,
+      lastname: student.lastname,
+      campusId: student.campusId,
+      imageURL: student.imageURL,
+      gpa: student.gpa,
+      email: student.email,
+      studentId: student.id, 
+      redirect: false
     };
   }
 
@@ -39,23 +43,21 @@ class EditStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
     
-    if(!(this.state.allcampus.map(({id}) => id)).includes(parseInt(this.state.campusId))){
+    if(!(this.props.allCampuses.map(({id}) => id)).includes(parseInt(this.state.campusId))){
       alert("CampusId is not valid, please enter a valid campusId.")
       this.setState({
         redirect: false
       })
     }
     else{
-      const student = {
-          firstname: this.state.firstname,
-          lastname: this.state.lastname,
-          campusId: this.state.campusId,
-          email: this.state.email,
-          imageUrl: this.state.imageUrl,
-          gpa: this.state.gpa,
-          id: this.state.studentId
-      };
-      
+      let student = this.state.student
+      student.firstname = this.state.firstname
+      student.lastname = this.state.lastname
+      student.campusId = this.state.campusId
+      student.imageURL = this.state.imageURL
+      student.gpa = this.state.gpa
+      student.email = this.state.email
+ 
       await this.props.editStudent(student);
 
       // Update state, and trigger redirect to show the new student.
@@ -64,7 +66,7 @@ class EditStudentContainer extends Component {
         lastname: '', 
         campusId: '', 
         email: '',
-        imageUrl: '',
+        imageURL: '',
         gpa: '',
         redirect: true
       });
